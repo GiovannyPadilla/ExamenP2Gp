@@ -7,17 +7,16 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label
+                 Text="Bienvenido a la aplicacion de Giovanny Padilla"
+                 Style="{StaticResource Headline}"
+                 SemanticProperties.HeadingLevel="Level1" />
             <Image
                 Source="programacion.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
-
-            <Label
-                Text="Bienvenido a la aplicacion de Giovanny Padilla"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
+                SemanticProperties.Description="Main page personalizado" />
+            
             <Button 
             Text="Chistes"
             Clicked="GoToJokes"
@@ -25,7 +24,9 @@
             TextColor="Black"
             CornerRadius="10"
             BorderColor="Black"
-            BorderWidth="1" />
+            BorderWidth="1"
+            HeightRequest="40"
+            WidthRequest="150"/>
 
             <Button 
             Text="About"
@@ -34,7 +35,9 @@
             TextColor="Black"
             CornerRadius="10"
             BorderColor="Black"
-            BorderWidth="1" />
+            BorderWidth="1"
+            HeightRequest="40"
+            WidthRequest="150"/>
 
         </VerticalStackLayout>
     </ScrollView>
