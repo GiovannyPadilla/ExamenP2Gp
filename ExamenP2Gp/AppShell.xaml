@@ -7,9 +7,10 @@
     Shell.FlyoutBehavior="Disabled"
     Title="ExamenP2Gp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellItem>
+        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Title="Chistes" ContentTemplate="{DataTemplate local:JokesPage}" />
+        <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </ShellItem>
 
 </Shell>
