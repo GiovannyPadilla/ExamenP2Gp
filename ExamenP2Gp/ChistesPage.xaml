@@ -23,7 +23,9 @@
                 BackgroundColor="#2196F3"
                 TextColor="White"
                 AbsoluteLayout.LayoutBounds="0.5,0.95,0.6,50"
-                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" />
+                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" 
+                HeightRequest="40"
+                WidthRequest="150"/>
 
     </AbsoluteLayout>
 </ContentPage>
