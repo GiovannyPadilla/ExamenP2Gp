@@ -8,9 +8,20 @@
     Title="ExamenP2Gp">
 
     <ShellItem>
-        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent Title="Chistes" ContentTemplate="{DataTemplate local:JokesPage}" />
-        <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent 
+            Title="Inicio" 
+            ContentTemplate="{DataTemplate local:MainPage}" 
+            Route="MainPage" />
+
+        <ShellContent 
+            Title="Chistes" 
+            ContentTemplate="{DataTemplate local:ChistesPage}" 
+            Route="Chistes" />
+
+        <ShellContent 
+            Title="About" 
+            ContentTemplate="{DataTemplate local:AboutPage}" 
+            Route="About" />
     </ShellItem>
 
 </Shell>

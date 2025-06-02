@@ -1,42 +1,47 @@
-namespace ExamenP2Gp;
+using System.Net.Http;
+using System.Text.Json;
 
-public partial class ChistesPage : ContentPage
+namespace ExamenP2Gp
 {
-    HttpClient _client = new();
-
-    public ChistesPage()
+    public partial class ChistesPage : ContentPage
     {
-        InitializeComponent();
-        CargarChiste();
-    }
+        private readonly HttpClient _httpClient = new();
 
-    private void InitializeComponent()
-    {
-        throw new NotImplementedException();
-    }
-
-    private async void CargarChiste()
-    {
-        try
+        public ChistesPage()
         {
-            var response = await _client.GetStringAsync("https://official-joke-api.appspot.com/random_joke");
-            var chiste = System.Text.Json.JsonSerializer.Deserialize<Chiste>(response);
-            JokeLabel.Text = $"{chiste.setup}\n{chiste.punchline}";
+            InitializeComponent();
+            GetNewJoke(null, null);
         }
-        catch (Exception)
+
+        private async void GetNewJoke(object sender, EventArgs e)
         {
-            JokeLabel.Text = "Error al cargar el chiste.";
+            try
+            {
+                var response = await _httpClient.GetStringAsync("https://official-joke-api.appspot.com/random_joke");
+                var joke = JsonSerializer.Deserialize<Joke>(response, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (joke != null)
+                {
+                    JokeLabel.Text = $"{joke.Setup}\n\n{joke.Punchline}";
+                }
+                else
+                {
+                    JokeLabel.Text = "No se pudo cargar el chiste.";
+                }
+            }
+            catch
+            {
+                JokeLabel.Text = "Error al conectar con la API.";
+            }
         }
-    }
 
-    private void OnOtroChisteClicked(object sender, EventArgs e)
-    {
-        CargarChiste();
-    }
-
-    public class Chiste
-    {
-        public string setup { get; set; }
-        public string punchline { get; set; }
+        private class Joke
+        {
+            public string Setup { get; set; }
+            public string Punchline { get; set; }
+        }
     }
 }

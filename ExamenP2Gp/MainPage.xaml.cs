@@ -16,6 +16,11 @@
         {
             await Shell.Current.GoToAsync("//About");
         }
+
+        private void ChisteButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
