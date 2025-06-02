@@ -6,16 +6,17 @@
 
     <AbsoluteLayout>
 
-        <!-- Contenedor del chiste -->
-        <ScrollView>
-            <Label x:Name="JokeLabel"
-                   Text="Aquí aparecerá el chiste"
-                   FontSize="20"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   VerticalOptions="CenterAndExpand"
-                   Margin="20" />
-        </ScrollView>
+
+        <Label x:Name="JokeLabel"
+               Text="Aquí aparecerá el chiste"
+               FontSize="20"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Margin="20"
+               AbsoluteLayout.LayoutBounds="0.5,0.5,0.8,200"
+               AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" />
 
         <Button Text="Otro chiste"
                 Clicked="GetNewJoke"

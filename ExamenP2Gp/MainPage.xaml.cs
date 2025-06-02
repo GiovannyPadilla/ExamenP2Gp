@@ -21,6 +21,11 @@
         {
 
         }
+
+        private void CounterBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
